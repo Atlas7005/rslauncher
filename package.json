@@ -6,7 +6,7 @@
   "scripts": {
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "publish": "set GH_TOKEN=tkn && electron-builder --publish always"
+    "publish": "electron-builder --publish always"
   },
   "keywords": [],
   "author": "Atlas7005",
