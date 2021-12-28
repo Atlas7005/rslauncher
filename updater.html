@@ -21,7 +21,11 @@
         <script>
             ipcRenderer.on("msg", (e, args) => {
                 document.querySelector(".status").innerHTML = args;
-            })
+            });
+
+            ipcRenderer.on("progress", (e, args) => {
+                document.querySelector(".loadingbar-inner").style.width = args+"%";
+            });
         </script>
     </body>
 </html>

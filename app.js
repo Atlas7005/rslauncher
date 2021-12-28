@@ -57,11 +57,13 @@ app.whenReady().then(() => {
 autoUpdater.on("checking-for-updates", () => {
     console.log("Checking for updates...");
     updaterWin.webContents.send("msg", "Checking for updates...");
+    updaterWin.webContents.send("progress", 1);
 });
 
 autoUpdater.on("update-available", () => {
     console.log("Update available!");
     updaterWin.webContents.send("msg", "Update available!");
+    updaterWin.webContents.send("progress", 5);
 });
 
 autoUpdater.on("update-not-available", () => {
@@ -72,6 +74,7 @@ autoUpdater.on("update-not-available", () => {
 autoUpdater.on("error", (err) => {
     console.log("Error in auto-updater: " + err);
     updaterWin.webContents.send("msg", "Error in auto-updater: " + err);
+    updaterWin.webContents.send("progress", 100);
 });
 
 autoUpdater.on("download-progress", (progressObj) => {
@@ -80,11 +83,13 @@ autoUpdater.on("download-progress", (progressObj) => {
     log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
     console.log(log_message);
     updaterWin.webContents.send("msg", log_message);
+    updaterWin.webContents.send("progress", progressObj.percent);
 });
 
 autoUpdater.on("update-downloaded", (info) => {
     console.log("Update downloaded!");
     updaterWin.webContents.send("msg", "Update downloaded!");
+    updaterWin.webContents.send("progress", 100);
     autoUpdater.quitAndInstall();
 });
 
