@@ -1,0 +1,33 @@
+.content {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-app-region: drag;
+}
+
+.logo {
+    height: 10rem;
+    width: 10rem;
+}
+
+.loadingbar {
+    width: 80%;
+    height: 1.25rem;
+    display: flex;
+    align-items: center;
+    background-color: rgba(var(--theme-color-r), var(--theme-color-g), var(--theme-color-b), .1);
+    border-radius: 10px;
+}
+
+.loadingbar-inner {
+    width: 25%;
+    height: 100%;
+    background-color: rgb(var(--theme-color-r), var(--theme-color-g), var(--theme-color-b));
+    transition: width .5s ease-in-out;
+    border-radius: 10px;
+}
+
+.loadingbar, .status {
+    margin-top: 1rem;
+}

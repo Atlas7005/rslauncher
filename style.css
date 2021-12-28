@@ -1,0 +1,232 @@
+:root {
+    --bg-color-r: 18;
+    --bg-color-g: 18;
+    --bg-color-b: 24;
+    --bg-color-secondary-r: 31;
+    --bg-color-secondary-g: 31;
+    --bg-color-secondary-b: 38;
+
+    --text-color: #fff;
+    --theme-color-r: 151;
+    --theme-color-g: 24;
+    --theme-color-b: 255;
+    --theme-color-secondary-r: 134;
+    --theme-color-secondary-g: 16;
+    --theme-color-secondary-b: 231;
+
+    --minimize-color-r: 100;
+    --minimize-color-g: 228;
+    --minimize-color-b: 40;
+    --minimize-color-hover-r: 90;
+    --minimize-color-hover-g: 219;
+    --minimize-color-hover-b: 47;
+    --maximize-color-r: 228;
+    --maximize-color-g: 228;
+    --maximize-color-b: 40;
+    --maximize-color-hover-r: 213;
+    --maximize-color-hover-g: 213;
+    --maximize-color-hover-b: 47;
+    --close-color-r: 226;
+    --close-color-g: 54;
+    --close-color-b: 54;
+    --close-color-hover-r: 211;
+    --close-color-hover-g: 45;
+    --close-color-hover-b: 45;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: rgb(var(--bg-color-r), var(--bg-color-g), var(--bg-color-b));
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(var(--theme-color-r), var(--theme-color-g), var(--theme-color-b));
+}
+
+a:hover {
+    color: rgb(var(--theme-color-secondary-r), var(--theme-color-secondary-g), var(--theme-color-secondary-b));
+    text-decoration: underline;
+}
+
+.titlebar {
+    height: 32px;
+    width: 100%;
+    background-color: rgb(var(--bg-color-secondary-r), var(--bg-color-secondary-g), var(--bg-color-secondary-b));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem .7rem;
+    -webkit-app-region: drag;
+}
+
+.titlebar .title {
+    color: var(--text-color);
+    z-index: 99;
+    user-select: all;
+    -webkit-user-select: all;
+    -webkit-app-region: no-drag;
+}
+
+.titlebar .btns {
+    display: flex;
+    align-items: center;
+    z-index: 99;
+    user-select: all;
+    -webkit-user-select: all;
+    -webkit-app-region: no-drag;
+}
+
+.titlebar .btns button {
+    padding: .5rem;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    font-size: 1.25em;
+    cursor: pointer;
+    z-index: 99;
+    user-select: all;
+    -webkit-user-select: all;
+    -webkit-app-region: no-drag;
+    box-shadow: inset 0 0 3px 2px rgba(0,0,0,0.15);
+    transition: all .2s ease-in-out;
+}
+
+.titlebar .btns .minimize {
+    background-color: rgb(var(--minimize-color-r), var(--minimize-color-g), var(--minimize-color-b));
+}
+
+.titlebar .btns .minimize:hover {
+    background-color: rgb(var(--minimize-color-hover-r), var(--minimize-color-hover-g), var(--minimize-color-hover-b));
+    box-shadow: 0 0 2px 1.5px rgba(var(--minimize-color-r), var(--minimize-color-g), var(--minimize-color-b), 0.4);
+}
+
+.titlebar .btns .maximize {
+    background-color: rgb(var(--maximize-color-r), var(--maximize-color-g), var(--maximize-color-b));
+}
+
+.titlebar .btns .maximize:hover {
+    background-color: rgb(var(--maximize-color-hover-r), var(--maximize-color-hover-g), var(--maximize-color-hover-b));
+    box-shadow: 0 0 2px 1.5px rgba(var(--maximize-color-r), var(--maximize-color-g), var(--maximize-color-b), 0.4);
+}
+
+.titlebar .btns .close {
+    background-color: rgb(var(--close-color-r), var(--close-color-g), var(--close-color-b));
+}
+
+.titlebar .btns .close:hover {
+    background-color: rgb(var(--close-color-hover-r), var(--close-color-hover-g), var(--close-color-hover-b));
+    box-shadow: 0 0 2px 1.5px rgba(var(--close-color-r), var(--close-color-g), var(--close-color-b), 0.4);
+}
+
+.titlebar .btns button:not(:first-child) {
+    margin-left: .5rem;
+}
+
+.content {
+    height: calc(100vh - 32px);
+    width: 100%;
+    background-color: rgb(var(--bg-color-r), var(--bg-color-g), var(--bg-color-b));
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+}
+
+.servers {
+    width: 267px;
+    height: 100%;
+    background-color: rgba(var(--bg-color-secondary-r), var(--bg-color-secondary-g), var(--bg-color-secondary-b), 0.75);
+    padding: 1rem .7rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.servers .server {
+    width: 100%;
+    display: flex;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+    border-top: 1px solid rgba(var(--theme-color-r), var(--theme-color-g), var(--theme-color-b), .4);
+    transition: all .2s ease-in-out;
+}
+
+.servers .server:nth-last-of-type(1) {
+    border-bottom: 1px solid rgba(var(--theme-color-r), var(--theme-color-g), var(--theme-color-b), .4);
+}
+
+.servers .server:hover {
+    background-color: rgba(var(--theme-color-r), var(--theme-color-g), var(--theme-color-b), .1);
+}
+
+.serverinfo {
+    width: calc(100% - 267px);
+    height: 100%;
+    background-color: rgb(var(--bg-color-r), var(--bg-color-g), var(--bg-color-b));
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.serverinfo .server-logo {
+    height: 10rem;
+    width: 10rem;
+    align-self: center;
+}
+
+.serverinfo .server-info-items .server-info-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.serverinfo .server-info-items .server-info-item-name {
+    color: var(--text-color);
+    font-size: 1.25em;
+}
+
+.server-info-item-value {
+    color: var(--text-color);
+    font-size: 1.25em;
+}
+
+.server-info-connect > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 2.5rem;
+    background-color: rgb(var(--theme-color-r), var(--theme-color-g), var(--theme-color-b));
+    border-radius: .5rem;
+    cursor: pointer;
+    color: var(--text-color) !important;
+    text-decoration: none !important;
+    -webkit-app-region: no-drag;
+    transition: all .2s ease-in-out;
+}
+
+.server-info-connect > *:hover {
+    background-color: rgb(var(--theme-color-secondary-r), var(--theme-color-secondary-g), var(--theme-color-secondary-b));
+    box-shadow: 0 0 2px 1.5px rgba(var(--theme-color-secondary-r), var(--theme-color-secondary-g), var(--theme-color-secondary-b), 0.4);
+}

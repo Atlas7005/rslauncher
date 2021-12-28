@@ -1,0 +1,39 @@
+{
+  "name": "rslauncher",
+  "version": "1.0.0",
+  "description": "A server launcher for the Ruby Servers network",
+  "main": "app.js",
+  "scripts": {
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "publish": "set GH_TOKEN=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 && electron-builder --publish always"
+  },
+  "keywords": [],
+  "author": "Atlas7005",
+  "license": "AGPL-3.0-or-later",
+  "devDependencies": {
+    "electron": "^16.0.5",
+    "electron-builder": "^22.14.5"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "electron-updater": "^4.6.1"
+  },
+  "build": {
+    "appId": "com.atlas7005.rubyserverslauncher",
+    "productName": "Ruby Servers Launcher",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false
+    },
+    "publish": {
+      "provider": "github"      
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Atlas7005/rslauncher.git"
+  }
+}
