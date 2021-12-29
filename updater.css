@@ -21,7 +21,7 @@
 }
 
 .loadingbar-inner {
-    width: 25%;
+    width: 0%;
     height: 100%;
     background-color: rgb(var(--theme-color-r), var(--theme-color-g), var(--theme-color-b));
     transition: width .5s ease-in-out;

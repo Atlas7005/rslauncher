@@ -14,18 +14,18 @@
     --theme-color-secondary-g: 16;
     --theme-color-secondary-b: 231;
 
-    --minimize-color-r: 100;
-    --minimize-color-g: 228;
-    --minimize-color-b: 40;
-    --minimize-color-hover-r: 90;
-    --minimize-color-hover-g: 219;
-    --minimize-color-hover-b: 47;
-    --maximize-color-r: 228;
+    --maximize-color-r: 100;
     --maximize-color-g: 228;
     --maximize-color-b: 40;
-    --maximize-color-hover-r: 213;
-    --maximize-color-hover-g: 213;
+    --maximize-color-hover-r: 90;
+    --maximize-color-hover-g: 219;
     --maximize-color-hover-b: 47;
+    --minimize-color-r: 228;
+    --minimize-color-g: 228;
+    --minimize-color-b: 40;
+    --minimize-color-hover-r: 213;
+    --minimize-color-hover-g: 213;
+    --minimize-color-hover-b: 47;
     --close-color-r: 226;
     --close-color-g: 54;
     --close-color-b: 54;
