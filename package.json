@@ -1,6 +1,6 @@
 {
   "name": "rslauncher",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A server launcher for the Ruby Servers network",
   "main": "app.js",
   "scripts": {
